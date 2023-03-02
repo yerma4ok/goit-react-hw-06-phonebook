@@ -20,12 +20,17 @@ ul {
 
 li {
   /* list-style: none; */
-  margin: 0 0 10px 0;
+  margin: 0 0 10px 30px;
   padding: 0;
 }
 
 h1,
-h2,
+h2 {
+  margin-left: 50px;
+  font-size: 30px;
+  letter-spacing: 0.06em;
+  color: gray;
+};
 h3,
 h4,
 h5,

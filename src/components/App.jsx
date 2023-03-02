@@ -1,15 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { addContactToState, deleteContactFromState } from 'redux/contactsSlice';
 import { nanoid } from 'nanoid';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContactToState, deleteContactFromState} from 'redux/contactsSlice';
+import { setFilter } from 'redux/filterSlice';
 import FormAddContact from './FormAddContact';
 import SectionWrap from './SectionWrap';
 import ContactsList from './ContactsList';
 import FilterByName from './FilterByName';
-import { MainTitle, ContactTitle } from './App.styled';
 
 export default function App() {
-  const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter);
+  const contacts = useSelector(state => state.contacts)
+  const filter = useSelector(state => state.filter)
   const dispatch = useDispatch();
 
   const addContact = ({ name, number }) => {
@@ -23,15 +23,15 @@ export default function App() {
 
     isExist
       ? alert(`${name} is already in the contacts`)
-      : dispatch(addContactToState(contact));
+      : dispatch(addContactToState(contact))
   };
 
   const deleteContact = contactId => {
-    dispatch(deleteContactFromState(contactId));
+    dispatch(deleteContactFromState(contactId))
   };
 
   const changeFilter = e => {
-    dispatch(e.currentTarget.value);
+    dispatch(setFilter(e.currentTarget.value));
   };
 
   const normalizedFilter = filter.toLowerCase();
@@ -43,15 +43,15 @@ export default function App() {
     x.name.localeCompare(y.name)
   );
 
+
   return (
     <>
-      <SectionWrap>
-        <MainTitle>Phonebook</MainTitle>
+      <SectionWrap title="Phonebook">
         <FormAddContact onAddFormSubmit={addContact} />
       </SectionWrap>
-      <SectionWrap>
-        <ContactTitle>Contacts</ContactTitle>
+      <SectionWrap title="Contacts">
         <FilterByName value={filter} onChange={changeFilter} />
+
         <ContactsList contacts={sortedContacts} deleteContact={deleteContact} />
       </SectionWrap>
     </>

@@ -23,10 +23,13 @@ export const FormLabel = styled.label`
   margin-left: 25px;
   margin-top: 20px;
   text-transform: capitalize;
+  /* display: block; */
+  /* position: relative; */
 `;
 
 export const Error = styled.p`
   color: red;
+  /* position: absolute; */
   font-size: 0.5rem;
 `;
 

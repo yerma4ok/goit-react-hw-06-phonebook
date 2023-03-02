@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ContList, DeleteBtn } from './ContactsList.styled';
+import { ConList, DeleteBtn } from './ContactsList.styled';
 
 const ContactsList = ({ contacts, deleteContact }) => {
   return (
-    <ContList>
+    <ConList>
       {contacts.map(({ id, name, number }) => (
         <li key={id}>
           <span>{name}</span>
@@ -16,7 +16,7 @@ const ContactsList = ({ contacts, deleteContact }) => {
           </DeleteBtn>
         </li>
       ))}
-    </ContList>
+    </ConList>
   );
 };
 
@@ -26,8 +26,8 @@ ContactsList.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
-    })
-  ),
+    }).isRequired
+  ).isRequired,
   deleteContact: PropTypes.func,
 };
 

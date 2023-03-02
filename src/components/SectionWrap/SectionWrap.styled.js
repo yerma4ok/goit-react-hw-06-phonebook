@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
+  /* display: flex; */
   align-items: center;
   margin-bottom: 40px;
   margin-left: 30px;
@@ -9,6 +10,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h2`
+  /* color: darkgray; */
   font-size: 24px;
   display: block;
   margin-bottom: 15px;

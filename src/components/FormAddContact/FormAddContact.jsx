@@ -1,6 +1,5 @@
 import { React } from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
 import * as yup from 'yup';
 import { Formik, ErrorMessage } from 'formik';
 import {
@@ -40,7 +39,6 @@ const FormAddContact = ({ onAddFormSubmit }) => {
     onAddFormSubmit(values);
     resetForm();
   };
-
   return (
     <Formik
       initialValues={initialValues}
@@ -58,6 +56,8 @@ const FormAddContact = ({ onAddFormSubmit }) => {
           Number
           <Input type="tel" name="number" />
           <ErrorMessage name="number" component={ErrorNumber} />
+          {/* {messeges.number} */}
+          {/* </ErrorMessage> */}
         </FormLabel>
         <AddContactBtn type="submit">Add contanct</AddContactBtn>
       </FormContact>
